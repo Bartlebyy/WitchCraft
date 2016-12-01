@@ -1,0 +1,19 @@
+<div class="row col-md-8 col-md-offset-2">
+  <h1>Test Game</h1>
+
+<div class="panel panel-default">
+  <% if @game.events.any? %>
+    <div class="panel-body" id="events">
+      <% @game.events.each do |event| %>
+        <%= "Player #{ event.player.id } has pushed a button." %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="panel-body hidden" id="events">
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <%= button_to "Create Event", { action: "create" }, method: :post, params: { player_id: @player.id } %>
+</div>

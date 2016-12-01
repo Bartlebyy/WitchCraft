@@ -7,7 +7,6 @@ class CreatePlayersTable < ActiveRecord::Migration[5.0]
       t.string :role
       t.boolean :win
       t.boolean :ghost
-
       t.timestamps
     end
   end
